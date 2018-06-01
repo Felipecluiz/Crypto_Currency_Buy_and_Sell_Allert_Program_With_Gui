@@ -189,6 +189,11 @@ public class GuiTrabFinal extends javax.swing.JFrame {
              
              
          }
+         
+                        System.out.println(compare+" compare do temp");
+                System.out.println(coin+" coin do temp");
+                        
+                       
         new Graph().setVisible(true);
         this.setVisible(false);
         Temp time = new Temp(2000,coin,compare);

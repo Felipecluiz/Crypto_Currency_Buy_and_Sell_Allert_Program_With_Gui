@@ -53,10 +53,7 @@ Timer timer;
                 
                 //use.getButtonGroup1().isSelected(use.getButtonGroup1().getSelection())
                // System.out.println(use.getjRadioButton4());
-                System.out.println(compare+" compare do temp");
-                System.out.println(coin+" coin do temp");
-                        
-                       
+ 
                        
                if(coin.equals("ETH")){
               

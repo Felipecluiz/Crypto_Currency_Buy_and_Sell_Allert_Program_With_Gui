@@ -32,7 +32,7 @@ public class Calc {
 
 		String inputMMovel = "";
 
-		String rosca = "";
+		
 		int conta = 0;
 
 		//media movel ETH40
@@ -47,7 +47,7 @@ public class Calc {
 			}
 		}
 		mmvel40in.close();
-		System.out.println("roscaca");
+		
 		
 		URLConnection mmvel10 = mMovelETH10URL.openConnection();
 		BufferedReader mmvel10in = new BufferedReader(new InputStreamReader(mmvel10.getInputStream()));
@@ -63,7 +63,7 @@ public class Calc {
 				
 			}
 		}
-		System.out.println("rosquinha");
+		
 		
 		mmvel10in.close();
 //		   for (int i = 0; i < sMAETH10date.size()-1 ;i++){
