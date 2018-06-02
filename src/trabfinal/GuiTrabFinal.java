@@ -5,6 +5,8 @@
  */
 package trabfinal;
  
+import org.jfree.ui.RefineryUtilities;
+
 /**
  *
  * @author my
@@ -197,8 +199,8 @@ public class GuiTrabFinal extends javax.swing.JFrame {
         new Graph().setVisible(true);
         this.setVisible(false);
         Temp time = new Temp(2000,coin,compare);
-       
         
+         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
@@ -247,11 +249,11 @@ public class GuiTrabFinal extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {public void run() {new GuiTrabFinal().setVisible(true);}});
-        
-        
+       
             
     }
-
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
