@@ -5,25 +5,26 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import org.jfree.ui.RefineryUtilities;
 
 public class Calc {
+    
 
-
-	ArrayList <String> SCATR = new ArrayList<String>();
-	ArrayList <String> ETHATR = new ArrayList<String>();
-
-	ArrayList <String> SCATRdate = new ArrayList<String>();
-	ArrayList <String> ETHATRdate = new ArrayList<String>();
-	
+//	ArrayList <String> SCATR = new ArrayList<String>();
+//	ArrayList <String> ETHATR = new ArrayList<String>();
+//
+//	ArrayList <String> SCATRdate = new ArrayList<String>();
+//	ArrayList <String> ETHATRdate = new ArrayList<String>();
+	public static String status;
 	public int calcMMETH() throws Exception { ///////////////////////////////////////////////////////////////////////////inicio do metodo eth
 		ArrayList <String> sMAETH40 = new ArrayList<String>();
 		ArrayList <String> sMAETH10 = new ArrayList<String>();
 		ArrayList <String> sMAETH40date = new ArrayList<String>();
 		ArrayList <String> sMAETH10date = new ArrayList<String>();
 		URL mMovelETH40URL = new URL("https://www.alphavantage.co/query?"
-				+ "function=SMA&symbol=ETH&interval=1min&time_period=40&series_type=close&apikey=YJC40GEVI5PVOITX");
+				+ "function=SMA&symbol=ETH&interval=5min&time_period=40&series_type=close&apikey=YJC40GEVI5PVOITX");
 		URL mMovelETH10URL = new URL("https://www.alphavantage.co/query?"
-				+ "function=SMA&symbol=ETH&interval=1min&time_period=10&series_type=close&apikey=YJC40GEVI5PVOITX");
+				+ "function=SMA&symbol=ETH&interval=5min&time_period=10&series_type=close&apikey=YJC40GEVI5PVOITX");
 		URL mMovelETHATR = new URL("https://www.alphavantage.co/query?function=ATR&symbol=ETH&interval=30min&"
 				+ "time_period=20&series_type=close&apikey=YJC40GEVI5PVOITX");
 
@@ -33,6 +34,7 @@ public class Calc {
 		String inputMMovel = "";
 
 		
+                
 		int conta = 0;
 
 		//media movel ETH40
@@ -69,15 +71,19 @@ public class Calc {
 //		   for (int i = 0; i < sMAETH10date.size()-1 ;i++){
 //		        System.out.println(sMAETH10date.get(i));
 //		        
-//		     }
-//		            for (int i = 0; i < sMAETH40date.size()-1 ;i++){
-//	        System.out.println(sMAETH40date.get(i));        
-//		     }
+		  //   }
+		            for (int i = 0; i < sMAETH40.size()-1 ;i++){
+	        System.out.println(sMAETH40.get(i));        
+		     }
 		
 		//do(){
-			
+			         System.out.println("logo antes do view chart");
 			//for(int i=0;i < sMAETH10date.size()-1;i++) {
-		
+                                  viewChart chart = new viewChart("Chart", "eth",cleanValues(sMAETH40),cleanValues(sMAETH10),cleanDate(sMAETH10date));
+                                  chart.pack( );          
+                                  RefineryUtilities.centerFrameOnScreen( chart );          
+                                  chart.setVisible( true ); //TODO closes last chart and opens new, or updates old one 
+                                 
 		
 			if(sMAETH10date.get(0).equals(sMAETH40date.get(0))) {
 				float a=Float.parseFloat(sMAETH40.get(0)); 
@@ -91,11 +97,14 @@ public class Calc {
 					System.out.println("sma eth 40 2: "+sMAETH40.get(1));
 				if(a > b && c > d) {
 					System.out.println("comprar eth");
+                                        status = "Coprar eths";
 				}else if(a < b && c < d) {
 					System.out.println("vender eth");
+                                        status = "vender eth";
 				}
 				else {
 					System.out.println("nada eth");
+                                        status = "wait eth";
 				}
 			}
 			//}
@@ -118,9 +127,9 @@ public class Calc {
 		ArrayList <String> sMASC40date = new ArrayList<String>();
 
         URL mMovelSC40URL = new URL("https://www.alphavantage.co/query?"
-                + "function=SMA&symbol=SC&interval=1min&time_period=10&series_type=close&apikey=YJC40GEVI5PVOITX");
+                + "function=SMA&symbol=SC&interval=5min&time_period=10&series_type=close&apikey=YJC40GEVI5PVOITX");
         URL mMovelSC10URL = new URL("https://www.alphavantage.co/query?"
-                + "function=SMA&symbol=SC&interval=1min&time_period=10&series_type=close&apikey=YJC40GEVI5PVOITX");
+                + "function=SMA&symbol=SC&interval=5min&time_period=10&series_type=close&apikey=YJC40GEVI5PVOITX");
                 
         URL mMovelSCATR = new URL("https://www.alphavantage.co/query?function=ATR&symbol=SC&interval=30min&"
         		+ "time_period=20&series_type=close&apikey=YJC40GEVI5PVOITX");
@@ -184,11 +193,14 @@ public class Calc {
 				System.out.println("sma sia 40 2: "+sMASC40.get(1));
 				if(a > b && c > d) {
 					System.out.println("comprar sia");
+                                        status = "comprar sia";
 				}else if(a < b && c < d) {
 					System.out.println("vender sia");
+                                        status = "vender sia";
 				}
 				else {
 					System.out.println("nada sia");
+                                        status = "wait sia";
 				}
 			}
 		
@@ -201,7 +213,30 @@ public class Calc {
 	}
 
 
-
-
-
+        
+        public ArrayList<Long> cleanDate(ArrayList<String> date){
+            
+            ArrayList<Long> cleanDates = new ArrayList<>();
+            
+            for(int i = 0; i < date.size(); i++){
+               cleanDates.add(Long.parseLong( date.get(i).substring(2,4)  + date.get(i).substring(5,7)   + 
+                                              date.get(i).substring(8,10) + date.get(i).substring(12,13) + 
+                                              date.get(i).substring(14,16)));
+                System.out.println("rosca");
+            }
+            
+            return cleanDates;
+        }
+        public ArrayList<Double> cleanValues(ArrayList<String> values){
+            ArrayList<Double> cleanValues = new ArrayList<>();
+            
+            for(int i = 0; i < values.size(); i++){
+               cleanValues.add(Double.parseDouble(values.get(i)));
+            }System.out.println("rosca2");
+            
+            return cleanValues;
+        }
+        
+        
+        
 }
