@@ -45,7 +45,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jStatus" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="205" max="32767" attributes="0"/>
@@ -58,7 +58,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jStatus" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="114" max="32767" attributes="0"/>
               <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
@@ -94,7 +94,7 @@
         <Property name="text" type="java.lang.String" value="Status:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="jStatus">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Noto Sans CJK SC Black" size="18" style="1"/>

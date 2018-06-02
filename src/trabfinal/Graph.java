@@ -17,7 +17,7 @@ public class Graph extends javax.swing.JFrame {
     public Graph() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,7 +30,7 @@ public class Graph extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jStatus = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
 
@@ -46,8 +46,8 @@ public class Graph extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Waree", 1, 24)); // NOI18N
         jLabel1.setText("Status:");
 
-        jLabel2.setFont(new java.awt.Font("Noto Sans CJK SC Black", 1, 18)); // NOI18N
-        jLabel2.setText("jLabel2");
+        jStatus.setFont(new java.awt.Font("Noto Sans CJK SC Black", 1, 18)); // NOI18N
+        jStatus.setText("jLabel2");
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("jRadioButton1");
@@ -75,7 +75,7 @@ public class Graph extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)))
+                        .addComponent(jStatus)))
                 .addContainerGap(205, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -84,7 +84,7 @@ public class Graph extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(jStatus))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
                 .addComponent(jRadioButton1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,6 +138,7 @@ public class Graph extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Graph().setVisible(true);
+                
             }
         });
     }
@@ -146,8 +147,8 @@ public class Graph extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JLabel jStatus;
     // End of variables declaration//GEN-END:variables
 }
