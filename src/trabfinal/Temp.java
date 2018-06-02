@@ -91,7 +91,7 @@ Timer timer;
                        try {
                            Bband.variationSIA();
                        } catch (Exception ex) {
-                          System.out.println("deu pau no boiler do SIA");
+                          System.out.println("deu pau no boilinger do SIA");
                        }
                    }
                    
@@ -112,9 +112,6 @@ Timer timer;
 
 
 }
-/**
- * Simple demo that uses java.util.Timer to schedule a task 
- * to execute once 5 seconds have passed.
- */
+
 
 
