@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import org.jfree.ui.RefineryUtilities;
 
 public class Calc {
@@ -78,12 +79,13 @@ public class Calc {
 		
 		//do(){
 			         System.out.println("logo antes do view chart");
-			//for(int i=0;i < sMAETH10date.size()-1;i++) {
-                                  viewChart chart = new viewChart("Chart", "eth",cleanValues(sMAETH40),cleanValues(sMAETH10),cleanDate(sMAETH10date));
+			//for(int i=0;i < sMAETH10date.size()-1;i++) 
+                        viewChart chart = new viewChart("Chart", "eth",cleanValues(sMAETH40),cleanValues(sMAETH10),cleanDate(sMAETH10date));
                                   chart.pack( );          
                                   RefineryUtilities.centerFrameOnScreen( chart );          
                                   chart.setVisible( true ); //TODO closes last chart and opens new, or updates old one 
-                                 
+                                  chart.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                                    
 		
 			if(sMAETH10date.get(0).equals(sMAETH40date.get(0))) {
 				float a=Float.parseFloat(sMAETH40.get(0)); 

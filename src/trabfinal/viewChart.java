@@ -8,7 +8,7 @@ package trabfinal;
 import java.awt.Color; 
 import java.awt.BasicStroke; 
 import java.util.ArrayList;
-
+import javax.swing.JFrame;
 import org.jfree.chart.ChartPanel; 
 import org.jfree.chart.JFreeChart; 
 import org.jfree.data.xy.XYDataset; 
@@ -23,10 +23,10 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.xy.XYSeriesCollection; 
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 
-public class viewChart extends ApplicationFrame {
+public class viewChart extends JFrame {
 
     
-   public viewChart( String applicationTitle, String chartTitle ,ArrayList<Double> a, ArrayList<Double> b,ArrayList<Long> c) {
+   public viewChart( String applicationTitle, String chartTitle , ArrayList<Double> a, ArrayList<Double> b, ArrayList<Long> c) {
       super(applicationTitle);
       
       JFreeChart xylineChart = ChartFactory.createXYLineChart(
@@ -88,6 +88,30 @@ public class viewChart extends ApplicationFrame {
       dataset.addSeries(lineA);          
       dataset.addSeries(lineB);          
       return dataset;
+   }
+   
+   double decideLowerBound(ArrayList<Double> valueA){
+       double highestValue = 0;
+       for (int i = 0; i < 40; i++){
+           double newValue = valueA.get(i);
+            if( highestValue < newValue){
+                highestValue = newValue;
+              }
+     
+       }
+        return highestValue;  
+     }
+   double decideUpperBound(ArrayList<Double> valueA){
+       double LowestValue = valueA.get(i);
+       for (int i = 0; i < 40; i++){
+           double newValue = valueA.get(i);
+            if( highestValue > newValue){
+                highestValue = newValue;
+              }
+     
+       }
+        return highestValue;  
+     }
    }
 
 //   public static void main( String[ ] args ) {
