@@ -73,19 +73,23 @@ public class Calc {
 //		        System.out.println(sMAETH10date.get(i));
 //		        
 		  //   }
-		            for (int i = 0; i < sMAETH40.size()-1 ;i++){
-	        System.out.println(sMAETH40.get(i));        
-		     }
+		//            for (int i = 0; i < sMAETH40.size()-1 ;i++){
+	        //System.out.println(sMAETH40.get(i));        
+		//     }
 		
 		//do(){
 			         System.out.println("logo antes do view chart");
 			//for(int i=0;i < sMAETH10date.size()-1;i++) 
-                        viewChart chart = new viewChart("Chart", "eth",cleanValues(sMAETH40),cleanValues(sMAETH10),cleanDate(sMAETH10date));
-                                  chart.pack( );          
-                                  RefineryUtilities.centerFrameOnScreen( chart );          
-                                  chart.setVisible( true ); //TODO closes last chart and opens new, or updates old one 
-                                  chart.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                                    
+                                JFrame rosca = new JFrame(); 
+                                viewChart chart = new viewChart("Chart", "eth",cleanValues(sMAETH40),cleanValues(sMAETH10),cleanDate(sMAETH10date));
+                                chart.pack( );          
+                                RefineryUtilities.centerFrameOnScreen( chart );          
+                                chart.setVisible( true ); //TODO closes last chart and opens new, or updates old one 
+                                chart.setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
+                                rosca.add( chart );
+                                rosca.setSize( 400, 300 );
+                                rosca.setVisible( true );
+                                rosca.setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
 		
 			if(sMAETH10date.get(0).equals(sMAETH40date.get(0))) {
 				float a=Float.parseFloat(sMAETH40.get(0)); 
@@ -224,7 +228,7 @@ public class Calc {
                cleanDates.add(Long.parseLong( date.get(i).substring(2,4)  + date.get(i).substring(5,7)   + 
                                               date.get(i).substring(8,10) + date.get(i).substring(12,13) + 
                                               date.get(i).substring(14,16)));
-                System.out.println("rosca");
+                //System.out.println("rosca");
             }
             
             return cleanDates;
