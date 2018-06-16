@@ -1,4 +1,5 @@
 package trabfinal;
+import java.awt.BorderLayout;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
@@ -6,11 +7,12 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import org.jfree.chart.ChartPanel;
 import org.jfree.ui.RefineryUtilities;
 
 public class Calc {
-    
-
+        
+        public int counter = 0;
 //	ArrayList <String> SCATR = new ArrayList<String>();
 //	ArrayList <String> ETHATR = new ArrayList<String>();
 //
@@ -32,11 +34,9 @@ public class Calc {
 		URLConnection mmvel40 = mMovelETH40URL.openConnection();
 		BufferedReader mmvel40in = new BufferedReader(new InputStreamReader(mmvel40.getInputStream()));
 
-		String inputMMovel = "";
-
+		String inputMMovel;
 		
                 
-		int conta = 0;
 
 		//media movel ETH40
 		while ((inputMMovel = mmvel40in.readLine()) != null) {
@@ -80,17 +80,31 @@ public class Calc {
 		//do(){
 			         System.out.println("logo antes do view chart");
 			//for(int i=0;i < sMAETH10date.size()-1;i++) 
-                                JFrame rosca = new JFrame(); 
+                                
+                                //if( counter != 0 ){
+//                                    System.out.println( "difrente de zero" + counter );
+//                                    JFrame frame = new viewChart("Chart", "eth",cleanValues(sMAETH40),cleanValues(sMAETH10),cleanDate(sMAETH10date));
+//                                    frame.removeAll();
+//                                    frame.revalidate();
+//                                    frame.setSize(500, 600);
+//                                    frame.repaint();
+//                                    frame.setVisible(true);
+                                    
+                                //}
+                                
+                                //if (counter == 0){
                                 viewChart chart = new viewChart("Chart", "eth",cleanValues(sMAETH40),cleanValues(sMAETH10),cleanDate(sMAETH10date));
+                                chart.setVisible(false);
                                 chart.pack( );          
                                 RefineryUtilities.centerFrameOnScreen( chart );          
                                 chart.setVisible( true ); //TODO closes last chart and opens new, or updates old one 
                                 chart.setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
-                                rosca.add( chart );
-                                rosca.setSize( 400, 300 );
-                                rosca.setVisible( true );
-                                rosca.setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
-		
+                                System.err.println("pei_" + counter);
+                                counter++;
+                                System.err.println("peix_" + counter);
+                                //}
+                                
+                                
 			if(sMAETH10date.get(0).equals(sMAETH40date.get(0))) {
 				float a=Float.parseFloat(sMAETH40.get(0)); 
 					System.out.println("sma eth 40 1: "+sMAETH40.get(0));
@@ -144,9 +158,6 @@ public class Calc {
 		BufferedReader mmvel40in = new BufferedReader(new InputStreamReader(mmvel40.getInputStream()));
 
 		String inputMMovel;
-
-		String rosca = "";
-		int conta = 0;
 
 		//media movel ETH40
 		while ((inputMMovel = mmvel40in.readLine()) != null) {
@@ -243,6 +254,6 @@ public class Calc {
             return cleanValues;
         }
         
-        
-        
+         
+
 }

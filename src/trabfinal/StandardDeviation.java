@@ -5,6 +5,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import javax.swing.JFrame;
+import org.jfree.ui.RefineryUtilities;
 
 public class StandardDeviation {
 
@@ -95,6 +97,16 @@ public class StandardDeviation {
 
 		///se o preço for maior que o uuper bound= vende
 		///se o preço for menor que o lower bound=compra
+                
+                  
+                viewChart chart = new viewChart("Chart", "eth",cleanValues(ValeuBBandsLOW),cleanValues(ValeuBBandsHIGH),cleanValues(ValueETHUSD),cleanDate(ValueETHdate));
+                                chart.setVisible(false);
+                                chart.pack( );          
+                                RefineryUtilities.centerFrameOnScreen( chart );          
+                                chart.setVisible( true ); //TODO closes last chart and opens new, or updates old one 
+                                chart.setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
+                                
+                
 		System.out.println(ValueETHdate.get(0));
 		System.out.println(ValeuBBandsdate.get(0));
 		int stopFor=0;
@@ -238,6 +250,7 @@ public class StandardDeviation {
 
 		///se o preço for maior que o uuper bound= vende
 		///se o preço for menor que o lower bound=compra
+              
 		System.out.println(ValueSIAdate.get(0));
 		System.out.println(ValeuBBandsdate.get(0));
 		int stopFor=0;
@@ -292,18 +305,29 @@ public class StandardDeviation {
 		return 1;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	       public ArrayList<Long> cleanDate(ArrayList<String> date){
+            
+            ArrayList<Long> cleanDates = new ArrayList<>();
+            
+            for(int i = 0; i < date.size(); i++){
+               cleanDates.add(Long.parseLong( date.get(i).substring(2,4)  + date.get(i).substring(5,7)   + 
+                                              date.get(i).substring(8,10) + date.get(i).substring(12,13) + 
+                                              date.get(i).substring(14,16)));
+                //System.out.println("rosca");
+            }
+            
+            return cleanDates;
+        }
+        public ArrayList<Double> cleanValues(ArrayList<String> values){
+            ArrayList<Double> cleanValues = new ArrayList<>();
+            
+            for(int i = 0; i < values.size(); i++){
+               cleanValues.add(Double.parseDouble(values.get(i)));
+            }System.out.println("rosca2");
+            
+            return cleanValues;
+        }
+        
 	
 	
 	

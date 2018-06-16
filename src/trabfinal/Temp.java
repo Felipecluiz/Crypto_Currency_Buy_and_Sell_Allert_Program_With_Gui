@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 
 public class Temp {
-
+Calc Mmovel = new Calc();
 Timer timer;
     
     public Temp(){
@@ -36,6 +36,7 @@ Timer timer;
          
         timer.scheduleAtFixedRate(new TimerTask() {
             int i = 0;
+            
             public void run() {
               
                 System.out.println("Task scheduled."+i);
@@ -49,7 +50,7 @@ Timer timer;
 
                 
                 StandardDeviation Bband = new StandardDeviation();
-                Calc Mmovel = new Calc();
+                
                 
                 //use.getButtonGroup1().isSelected(use.getButtonGroup1().getSelection())
                // System.out.println(use.getjRadioButton4());
@@ -61,7 +62,7 @@ Timer timer;
                        try {
                            Mmovel.calcMMETH();
                        } catch (Exception ex) {
-                           System.out.println("deu pau no mmovel do ETH");
+                           ex.printStackTrace();
                        }
                        
                        
@@ -70,7 +71,7 @@ Timer timer;
                        try {
                            Bband.variation();
                        } catch (Exception ex) {
-                           System.out.println("deu pau no boiler do ETH");
+                           ex.printStackTrace();
                        }
                        
                    }
@@ -83,7 +84,7 @@ Timer timer;
                        try {
                            Mmovel.calcMMSIA();
                        } catch (Exception ex) {
-                           System.out.println("deu pau no MMovel do SIA");
+                           ex.printStackTrace();
                        }
                        
                    }
