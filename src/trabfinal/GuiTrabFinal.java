@@ -4,13 +4,21 @@
  * and open the template in the editor.
  */
 package trabfinal;
- 
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author my
  */
 public class GuiTrabFinal extends javax.swing.JFrame {
-    static int cont=0;
+
+    static int cont = 0;
+    static int contMata = 60000;
+
     /**
      * Creates new form GuiTrabFinal
      */
@@ -26,40 +34,18 @@ public class GuiTrabFinal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("ETHER");
-
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jRadioButton1, org.jdesktop.beansbinding.ELProperty.create("${toolTipText}"), jRadioButton1, org.jdesktop.beansbinding.BeanProperty.create("actionCommand"));
-        bindingGroup.addBinding(binding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, buttonGroup1, org.jdesktop.beansbinding.ELProperty.create("${buttonCount}"), jRadioButton1, org.jdesktop.beansbinding.BeanProperty.create("toolTipText"));
-        bindingGroup.addBinding(binding);
-
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("SIA");
-
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setText("jRadioButton3");
 
         buttonGroup2.add(jRadioButton4);
         jRadioButton4.setText("Boiller");
@@ -86,6 +72,14 @@ public class GuiTrabFinal extends javax.swing.JFrame {
 
         jLabel1.setText("DayTrade");
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Digite o ativo");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -93,16 +87,16 @@ public class GuiTrabFinal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton3)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(137, 137, 137)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton1)
-                            .addComponent(jLabel1))))
+                            .addComponent(jLabel1)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -115,22 +109,19 @@ public class GuiTrabFinal extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel1)
-                        .addGap(24, 24, 24)
-                        .addComponent(jRadioButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton3))
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
                         .addComponent(jRadioButton4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRadioButton5)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
@@ -149,10 +140,8 @@ public class GuiTrabFinal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
-
-        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,65 +149,52 @@ public class GuiTrabFinal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Temp use = new Temp();
-      
-        GuiTrabFinal.cont=0;
-        String coin="",compare="";
-         if (jRadioButton4.isSelected()){
-             
-             System.out.println("boiler do gui");
-             
-             compare="boiler";
-             if(jRadioButton1.isSelected()){
-                 coin="ETH";
-             }
-             else if(jRadioButton2.isSelected()){
-                 coin="SIA";
-             }
+        GuiTrabFinal.cont = 1;
+        GuiTrabFinal.contMata = 58;
+        String coin = "", compare = "";
 
-                }
-         else if (jRadioButton5.isSelected()){
-             compare="MMovel";
-              System.out.println("mmovel do gui");
-                 if(jRadioButton1.isSelected()){
-                 coin="ETH";
-             }
-             else if(jRadioButton2.isSelected()){
-                 coin="SIA";
-             }
+        if (jRadioButton4.isSelected()) {
+            compare = "boiler";
+            coin = jTextField1.getText();
+            System.out.printf("moeda %s\n", coin);
 
-             
-             
-         }
-         
-                        System.out.println(compare+" compare do temp");
-                System.out.println(coin+" coin do temp");
-                        
-                       
+        } //   System.out.println("boiler do gui");
+        else if (jRadioButton5.isSelected()) {
+            coin = jTextField1.getText();
+            compare = "MMovel";
+            System.out.printf("moeda %s\n", coin);
+
+        }
+
         new Graph().setVisible(true);
         this.setVisible(false);
-        Temp time = new Temp(2000,coin,compare);
-       
-        
+
+        Temp time = new Temp(coin, compare);
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_jRadioButton5ActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
-
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
-        // TODO add your handling code here:
-        System.out.println("trabfinal.GuiTrabFinal.jRadioButton4ActionPerformed()");
+
+
     }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+
+
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -230,9 +206,7 @@ public class GuiTrabFinal extends javax.swing.JFrame {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
-                
-                
-                
+
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(GuiTrabFinal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -246,10 +220,12 @@ public class GuiTrabFinal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {public void run() {new GuiTrabFinal().setVisible(true);}});
-        
-        
-            
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new GuiTrabFinal().setVisible(true);
+            }
+        });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -257,15 +233,16 @@ public class GuiTrabFinal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
-    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-    
+     public static ActionEvent ev;
+
+    public static int trab;
+
     /**
      * @return the buttonGroup1
      */
@@ -278,7 +255,7 @@ public class GuiTrabFinal extends javax.swing.JFrame {
      * @param buttonGroup1 the buttonGroup1 to set
      */
     public void setButtonGroup1(javax.swing.ButtonGroup buttonGroup1) {
-         
+
         this.buttonGroup1 = buttonGroup1;
     }
 
@@ -299,29 +276,14 @@ public class GuiTrabFinal extends javax.swing.JFrame {
     /**
      * @return the jRadioButton1
      */
-    public javax.swing.JRadioButton getjRadioButton1() {
-        return jRadioButton1;
-    }
-
     /**
      * @return the jRadioButton2
      */
-    public javax.swing.JRadioButton getjRadioButton2() {
-        return jRadioButton2;
-    }
-
-    /**
-     * @return the jRadioButton3
-     */
-    public javax.swing.JRadioButton getjRadioButton3() {
-        return jRadioButton3;
-    }
-
     /**
      * @return the jRadioButton4
      */
     public boolean getjRadioButton4() {
-        System.out.println(jRadioButton4.isSelected());
+        //System.out.println(jRadioButton4.isSelected());
         return jRadioButton4.isSelected();
     }
 
@@ -335,7 +297,4 @@ public class GuiTrabFinal extends javax.swing.JFrame {
     /**
      * @return the bindingGroup
      */
-    public org.jdesktop.beansbinding.BindingGroup getBindingGroup() {
-        return bindingGroup;
-    }
 }

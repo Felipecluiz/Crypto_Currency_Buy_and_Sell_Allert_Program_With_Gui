@@ -133,14 +133,14 @@ public class Calc {
 		String rosca = "";
 		int conta = 0;
 
-		//media movel ETH40
+		
 		while ((inputMMovel = mmvel40in.readLine()) != null) {
-			///media movel SIA 40
+			
 
 			if (inputMMovel.contains("\"SMA\": ")){///media movel valor
 				sMASC40.add(inputMMovel.substring(20,27));               
 			}
-			if (inputMMovel.contains("\"2018-") && !inputMMovel.contains("Last Refreshed" )){///media movel  data
+			if (inputMMovel.contains("\"2018-") && !inputMMovel.contains("Last Refreshed" )){
 				sMASC40date.add(inputMMovel.substring(9,25));
 			}
 		}

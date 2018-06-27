@@ -5,6 +5,11 @@
  */
 package trabfinal;
 
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+
 /**
  *
  * @author my
@@ -30,11 +35,14 @@ public class Graph extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        statusLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowStateListener(new java.awt.event.WindowStateListener() {
+            public void windowStateChanged(java.awt.event.WindowEvent evt) {
+                formWindowStateChanged(evt);
+            }
+        });
 
         jButton1.setText("Return");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -46,37 +54,24 @@ public class Graph extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Waree", 1, 24)); // NOI18N
         jLabel1.setText("Status:");
 
-        jLabel2.setFont(new java.awt.Font("Noto Sans CJK SC Black", 1, 18)); // NOI18N
-        jLabel2.setText("jLabel2");
-
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("jRadioButton1");
-        jRadioButton1.setToolTipText("");
-
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("jRadioButton2");
+        statusLabel.setFont(new java.awt.Font("Noto Sans CJK SC Black", 1, 18)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(116, 116, 116))
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)))
-                .addContainerGap(205, Short.MAX_VALUE))
+                        .addComponent(statusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(130, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 218, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(116, 116, 116))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,16 +79,9 @@ public class Graph extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
-                .addComponent(jRadioButton1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)))
+                    .addComponent(statusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                .addComponent(jButton1)
                 .addGap(47, 47, 47))
         );
 
@@ -102,10 +90,25 @@ public class Graph extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        GuiTrabFinal.cont++;
-         new GuiTrabFinal().setVisible(true);
+        // GuiTrabFinal.cont++;
+        // Temp use = new Temp();
+        // System.out.printf("num do cont %d",GuiTrabFinal.cont);
+        Temp use = new Temp();
+
+        GuiTrabFinal.cont = 0;
+
+        new GuiTrabFinal().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    public void clic() {
+
+    }
+
+
+    private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowStateChanged
 
     /**
      * @param args the command line arguments
@@ -137,17 +140,21 @@ public class Graph extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+
                 new Graph().setVisible(true);
+
             }
         });
     }
 
+    public void setjLabel1(String rec) {
+
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JLabel statusLabel;
     // End of variables declaration//GEN-END:variables
+
 }
