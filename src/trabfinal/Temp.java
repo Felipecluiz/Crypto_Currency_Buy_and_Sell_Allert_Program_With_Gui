@@ -27,7 +27,7 @@ Timer timer;
         
         
          int delay = seconds;   // delay de 5 seg.
-         int interval = 60000;  // intervalo de 1 seg.
+         int interval = 30000;  // intervalo de 1 seg.
          Timer timer = new Timer();
            
 

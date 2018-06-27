@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 package trabfinal;
- 
-import org.jfree.ui.RefineryUtilities;
 
 /**
  *
  * @author my
  */
 public class GuiTrabFinal extends javax.swing.JFrame {
-    static int cont=0;
+
+    static int cont = 0;
+
     /**
      * Creates new form GuiTrabFinal
      */
@@ -162,45 +162,39 @@ public class GuiTrabFinal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Temp use = new Temp();
-      
-        GuiTrabFinal.cont=0;
-        String coin="",compare="";
-         if (jRadioButton4.isSelected()){
-             
-             System.out.println("boiler do gui");
-             
-             compare="boiler";
-             if(jRadioButton1.isSelected()){
-                 coin="ETH";
-             }
-             else if(jRadioButton2.isSelected()){
-                 coin="SIA";
-             }
 
-                }
-         else if (jRadioButton5.isSelected()){
-             compare="MMovel";
-              System.out.println("mmovel do gui");
-                 if(jRadioButton1.isSelected()){
-                 coin="ETH";
-             }
-             else if(jRadioButton2.isSelected()){
-                 coin="SIA";
-             }
+        GuiTrabFinal.cont = 0;
+        String coin = "", compare = "";
+        if (jRadioButton4.isSelected()) {
 
-             
-             
-         }
-         
-                        System.out.println(compare+" compare do temp");
-                System.out.println(coin+" coin do temp");
-                        
-                       
+            System.out.println("boiler do gui");
+
+            compare = "boiler";
+            if (jRadioButton1.isSelected()) {
+                coin = "ETH";
+            } else if (jRadioButton2.isSelected()) {
+                coin = "SIA";
+            }
+
+        } else if (jRadioButton5.isSelected()) {
+            compare = "MMovel";
+            System.out.println("mmovel do gui");
+            if (jRadioButton1.isSelected()) {
+                coin = "ETH";
+            } else if (jRadioButton2.isSelected()) {
+                coin = "SIA";
+            }
+
+        }
+
+        System.out.println(compare + " compare do temp");
+        System.out.println(coin + " coin do temp");
+
         new Graph().setVisible(true);
         this.setVisible(false);
-        Temp time = new Temp(2000,coin,compare);
-        
-         
+        Temp time = new Temp(2000, coin, compare);
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
@@ -220,7 +214,7 @@ public class GuiTrabFinal extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -232,9 +226,7 @@ public class GuiTrabFinal extends javax.swing.JFrame {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
-                
-                
-                
+
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(GuiTrabFinal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -248,12 +240,15 @@ public class GuiTrabFinal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {public void run() {new GuiTrabFinal().setVisible(true);}});
-       
-            
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new GuiTrabFinal().setVisible(true);
+            }
+        });
+
     }
-    
-    
+
+    public static int countadou = 0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -267,7 +262,7 @@ public class GuiTrabFinal extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton5;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
-    
+
     /**
      * @return the buttonGroup1
      */
@@ -280,7 +275,7 @@ public class GuiTrabFinal extends javax.swing.JFrame {
      * @param buttonGroup1 the buttonGroup1 to set
      */
     public void setButtonGroup1(javax.swing.ButtonGroup buttonGroup1) {
-         
+
         this.buttonGroup1 = buttonGroup1;
     }
 
