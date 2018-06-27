@@ -5,19 +5,19 @@
  */
 package trabfinal;
 
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author my
- */
+
+
 public class GuiTrabFinal extends javax.swing.JFrame {
 
     static int cont = 0;
     static int contMata = 60000;
+
 
     /**
      * Creates new form GuiTrabFinal
@@ -149,6 +149,7 @@ public class GuiTrabFinal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Temp use = new Temp();
+
         GuiTrabFinal.cont = 1;
         GuiTrabFinal.contMata = 58;
         String coin = "", compare = "";
@@ -170,6 +171,7 @@ public class GuiTrabFinal extends javax.swing.JFrame {
         this.setVisible(false);
 
         Temp time = new Temp(coin, compare);
+
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -228,6 +230,7 @@ public class GuiTrabFinal extends javax.swing.JFrame {
 
     }
 
+    public static int countadou = 0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -239,9 +242,7 @@ public class GuiTrabFinal extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-     public static ActionEvent ev;
 
-    public static int trab;
 
     /**
      * @return the buttonGroup1

@@ -18,6 +18,7 @@ import java.util.logging.Logger;
  */
 public class Temp {
 
+
     Timer timer;
     // int matar=60000;
 
@@ -30,6 +31,8 @@ public class Temp {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
+
+              
 
                 int delay = 2000;   // delay de 5 seg.
                 int interval = 6000;  // intervalo de 1 seg.
@@ -84,6 +87,7 @@ public class Temp {
     }
 
 }
+
 /**
  * Simple demo that uses java.util.Timer to schedule a task to execute once 5
  * seconds have passed.
