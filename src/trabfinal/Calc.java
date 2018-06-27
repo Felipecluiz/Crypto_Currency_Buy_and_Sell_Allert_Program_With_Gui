@@ -155,6 +155,7 @@ public class Calc {
                 + "function=SMA&symbol=SC&interval=5min&time_period=10&series_type=close&apikey=YJC40GEVI5PVOITX");
 
         URL mMovelSCATR = new URL("https://www.alphavantage.co/query?function=ATR&symbol=SC&interval=30min&"
+
                 + "time_period=20&series_type=close&apikey=YJC40GEVI5PVOITX");
 
         URLConnection mmvel40 = mMovelSC40URL.openConnection();
@@ -189,6 +190,7 @@ public class Calc {
             }
         }
         mmvel10in.close();
+
 //		   for (int i = 0; i < sMAETH10date.size()-1 ;i++){
 //		        System.out.println(sMAETH10date.get(i));
 //		        

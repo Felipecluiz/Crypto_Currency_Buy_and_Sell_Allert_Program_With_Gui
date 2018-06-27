@@ -30,7 +30,8 @@ public class StandardDeviation {
 
 		URL etherURL = new URL("https://www.alphavantage.co/query?"
 				+ "function=DIGITAL_CURRENCY_INTRADAY&symbol=ETH&market=USD&apikey=YJC40GEVI5PVOITX&datatype=csv");
-
+                
+                String x="";
 		URL BBandsURL = new URL("https://www.alphavantage.co/query?function=BBANDS&symbol=ETH&interval=5min&time_period=5&series_type=close&nbdevup=3&nbdevdn=3&apikey=YJC40GEVI5PVOITX");
 
 
@@ -41,7 +42,7 @@ public class StandardDeviation {
 
 		String inputMMovel = "";
 
-		String rosca = "";
+		
 		int conta = 0;
 
 		////////////////////////valor do BBANDS low and upper
